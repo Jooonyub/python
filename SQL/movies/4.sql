@@ -1,0 +1,1 @@
+SELECT COUNT(rating = 10.0) FROM ratings 
