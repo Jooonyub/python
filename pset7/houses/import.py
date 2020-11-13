@@ -35,24 +35,23 @@ with open(argv[1], "r") as characters: #terminal에 입력하는 python argument
         birth = int(row["birth"])
         name = row["name"]
         #이름을 단어별로 나눈다(공백에 따라 나누기)
-        space_count = 0
-        for i in name:
-            i = name.split(' ')
-            space_count =+ 1
-        if space_count == 1 : #middle name이 없는 경
-            first = name[0]
-            middle = '\0'
-            last = name[1]
+        #space_count = 0
+        name_split = name.split(' ')
+        if len(name_split) == 2 :
+            for i in name_split :
+                first = name_split[0]
+                middle = '\0'
+                last = name_split[1]
         else :
-            first = name[0]
-            middle = name[1]
-            last = name[2]
+            first = name_split[0]
+            middle = name_split[1]
+            last = name_split[2]
 
         #print(f"house is {house}, name is {name}, birth is {birth}.")
         #student = (id, first, middle, last, house, birth)
         #db.execute("INSERT INTO students(id, first, middle, last, house, birth) VALUES (?,?,?,?,?,?)", id, first, middle, last, house, birth)
-    #print(f"INSERT INTO students _ id:{id}, first:{first}, middle:{middle}, last:{last}, house:{house}, birth:{birth}")
-    print(id, first, middle, last, house, birth)
+        #print(f"INSERT INTO students _ id:{id}, first:{first}, middle:{middle}, last:{last}, house:{house}, birth:{birth}")
+        print(id, first, middle, last, house, birth)
         #for key in row :
             #print(key
         #db.execute("Query 명령문 여기에 입력하")
