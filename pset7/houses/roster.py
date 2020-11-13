@@ -11,10 +11,22 @@ db = conn.cursor()
 
 find_house = argv[1]
 
-house = db.execute("""
-SELECT DISTINCT house FROM students
-""")
+query = f'SELECT first, middle, last, birth FROM students WHERE house = {argv[1]}'
+db.execute(query)
 
+result = fetchall()
+
+for row in result :
+    if row.middle == '\\N':
+        fullname = f'{first} {last}'
+    else:
+        fullname = f'{first} {middle} {last}'
+    sentence = f"{name}, born {birth} "
+    print(sentence)
+'''
+fullname = first + middle + last
+print()
+'''
 '''
 for word in house :
     print(word)
