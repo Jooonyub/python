@@ -35,9 +35,9 @@ with open(argv[1], "r") as characters: #terminal에 입력하는 python argument
         #한줄씩 입력받는 값들을 여기서부터 구분하여서 받을 수 있다면?(firstname, middlename, last name)
         #id =+ 1
         print(row)
-        house = row["house"]
+        house = str(row["house"])
         birth = int(row["birth"])
-        name = row["name"]
+        name = str(row["name"])
         #이름을 단어별로 나눈다(공백에 따라 나누기)
         #space_count = 0
         name_split = name.split(' ')
