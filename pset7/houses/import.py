@@ -1,6 +1,4 @@
 # -*- coding: UTF-8 -*-
-
-
 import sqlite3
 from sys import argv, exit
 import csv
@@ -12,8 +10,8 @@ if (len(argv) != 2):
 
 
 #for i in range(argv):
-print(argv[0])
-print(argv[1])
+#print(argv[0])
+#print(argv[1])
 #print(argv[2])  #Linux command에 처음 입력하는 python이라는 단어는 argument로 인식되지 않는다.
 
 conn = sqlite3.connect("/Users/joonyubkim/workspace/python/pset7/houses/students.db")
@@ -34,7 +32,7 @@ with open(argv[1], "r") as characters: #terminal에 입력하는 python argument
     for row in reader:
         #한줄씩 입력받는 값들을 여기서부터 구분하여서 받을 수 있다면?(firstname, middlename, last name)
         #id =+ 1
-        print(row)
+        #print(row)
         house = str(row["house"])
         birth = int(row["birth"])
         name = str(row["name"])
@@ -44,7 +42,7 @@ with open(argv[1], "r") as characters: #terminal에 입력하는 python argument
         if len(name_split) == 2 :
             for i in name_split :
                 first = name_split[0]
-                middle = "\\N"
+                middle = "NULL"
                 last = name_split[1]
         else :
             first = name_split[0]

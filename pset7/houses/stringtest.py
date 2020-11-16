@@ -1,6 +1,6 @@
 first = "joonyub"
 last = "kim"
 
-name = "{'first'}+{'last'}"
+name = f"{first}+{last}"
 
 print(name)
